@@ -6,7 +6,7 @@ Benchmark suite for leveldb, multilevel, [ssdb](https://github.com/ideawu/ssdb),
 git clone <this repo>
 npm install
 redis-server
-ssdb-server
+ssdb-server ./ssdb.conf
 memcached
 npm run bench
 ```
