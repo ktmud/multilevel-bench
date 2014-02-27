@@ -2,6 +2,9 @@
 
 Benchmark suite for leveldb, multilevel, [ssdb](https://github.com/ideawu/ssdb), redis
 
+Forked from [juliangruber/multilevel-bench](https://github.com/juliangruber/multilevel-bench).
+
+
 ```bash
 git clone <this repo>
 npm install
@@ -11,12 +14,14 @@ memcached
 npm run bench
 ```
 
-## About SSDB 
+## What is SSDB?
 
-[ssdb](https://github.com/ideawu/ssdb) is a redis protocol compatible NoSQL database
+[SSDB](https://github.com/ideawu/ssdb) is a redis protocol compatible NoSQL database
 based on leveldb. Much like what `multilevel` does, but written in C++.
 
 ## Results
+
+Current results from my machine (MBP Retina, i5, 16GB Ram, SSD):
 
 ```
 
