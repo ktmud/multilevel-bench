@@ -12,7 +12,7 @@ var str = {
   medium : generateString(8),
   small : generateString(1)
 }
-var iterations = 50000;
+var iterations = 100000;
 var __dir = __dirname + '/var';
 var PORT = 18904;
 
