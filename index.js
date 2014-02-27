@@ -12,7 +12,7 @@ var str = {
   medium : generateString(20),
   small : generateString(1)
 }
-var iterations = 10000;
+var iterations = 100000;
 var __dir = __dirname + '/var';
 var PORT = 18904;
 
@@ -90,6 +90,25 @@ suite('levelDOWN (100.000x)', function () {
   db.open(function (err) {
     if (err) throw err;
   });
+
+  var i = 0;
+  bench('set small', function (done) { db.put(i++, str.small, done) });
+  bench('set medium', function (done) { db.put(i++, str.medium, done) });
+  bench('set large', function (done) { db.put(i++, str.large, done) });
+  bench('get large', function (done) { db.get(--i, done) });
+  bench('get medium', function (done) { db.get(--i, done) });
+  bench('get small', function (done) { db.get(--i, done) });
+});
+
+suite('lmdb (100.000x)', function () {
+  set('type', 'static');
+  set('iterations', iterations);
+  var levelup = require('levelup');
+  var lmdb = require('lmdb');
+  var rimraf = require('rimraf');
+
+  rimraf.sync(__dir + '/lmdb');
+  var db = levelup(__dir + '/lmdb', { db: lmdb });
 
   var i = 0;
   bench('set small', function (done) { db.put(i++, str.small, done) });

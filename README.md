@@ -1,6 +1,7 @@
 # multilevel-bench
 
-Benchmark suite for leveldb, multilevel, [ssdb](https://github.com/ideawu/ssdb), redis
+Benchmark suite for leveldb, multilevel, redis,
+ [lmdb](https://github.com/rvagg/lmdb/), [ssdb](https://github.com/ideawu/ssdb).
 
 Forked from [juliangruber/multilevel-bench](https://github.com/juliangruber/multilevel-bench).
 
@@ -56,6 +57,14 @@ Current results from my machine (MBP Retina, i5, 16GB Ram, SSD):
           42,163 op/s ⨠ get large
           46,262 op/s ⨠ get medium
           41,021 op/s ⨠ get small
+
+                      lmdb (100.000x)
+           4,510 op/s ⨠ set small
+          14,494 op/s ⨠ set medium
+          17,673 op/s ⨠ set large
+          13,945 op/s ⨠ get large
+          14,660 op/s ⨠ get medium
+          53,307 op/s ⨠ get small
 
                       multilevel (100.000x)
            6,044 op/s ⨠ set small

@@ -6,4 +6,5 @@ leveldown
 levelup
 multilevel
 ssdb
+lmdb
 log.txt

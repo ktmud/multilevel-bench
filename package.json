@@ -18,6 +18,7 @@
     "hiredis": "latest",
     "rimraf": "~2.1.4",
     "levelup": "rvagg/node-levelup",
+    "lmdb": "rvagg/lmdb",
     "multilevel": "latest",
     "multilevel-http": "latest",
     "leveldown": "latest",
