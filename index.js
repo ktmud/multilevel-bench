@@ -2,14 +2,14 @@ function generateString(i) {
   var ret = ''
   while (i) {
     i -= 1
-    ret += '{123456789abcdefg}'
+    ret += '{1234567890abcd}'
   }
   return ret
 }
 
 var str = {
-  large : generateString(50),
-  medium : generateString(20),
+  large : generateString(16),
+  medium : generateString(8),
   small : generateString(1)
 }
 var iterations = 100000;
