@@ -1,0 +1,68 @@
+                      Redis (random keys, 100.000x)
+          11,798 op/s ⨠ set small
+          11,380 op/s ⨠ set medium
+           9,403 op/s ⨠ set large
+          11,318 op/s ⨠ get large
+          11,728 op/s ⨠ get medium
+          12,441 op/s ⨠ get small
+
+                      SSDB (random keys, 100.000x)
+           9,277 op/s ⨠ set small
+           8,354 op/s ⨠ set medium
+           7,135 op/s ⨠ set large
+           9,331 op/s ⨠ get large
+          10,130 op/s ⨠ get medium
+          10,053 op/s ⨠ get small
+
+                      levelUP (random keys, 100.000x)
+          31,194 op/s ⨠ set small
+          25,899 op/s ⨠ set medium
+          15,671 op/s ⨠ set large
+          20,926 op/s ⨠ get large
+          24,903 op/s ⨠ get medium
+          25,731 op/s ⨠ get small
+
+                      levelDOWN (random keys, 100.000x)
+          39,472 op/s ⨠ set small
+          31,399 op/s ⨠ set medium
+          16,469 op/s ⨠ set large
+          20,103 op/s ⨠ get large
+          28,256 op/s ⨠ get medium
+          26,310 op/s ⨠ get small
+
+                      lmdb (random keys, 100.000x)
+           4,229 op/s ⨠ set small
+           7,224 op/s ⨠ set medium
+          17,981 op/s ⨠ set large
+          30,978 op/s ⨠ get large
+          29,583 op/s ⨠ get medium
+          42,359 op/s ⨠ get small
+
+                      levelup lmdb (random keys, 100.000x)
+           4,239 op/s ⨠ set small
+           6,292 op/s ⨠ set medium
+          11,612 op/s ⨠ set large
+          12,007 op/s ⨠ get large
+          16,434 op/s ⨠ get medium
+          31,730 op/s ⨠ get small
+
+                      multilevel (random keys, 100.000x)
+           5,667 op/s ⨠ set small
+           5,458 op/s ⨠ set medium
+           4,494 op/s ⨠ set large
+           4,689 op/s ⨠ get large
+           5,283 op/s ⨠ get medium
+           5,665 op/s ⨠ get small
+
+                      multilevel (standalone server process, random keys, 100.000x)
+           5,204 op/s ⨠ set small
+           4,869 op/s ⨠ set medium
+           4,088 op/s ⨠ set large
+           4,127 op/s ⨠ get large
+           4,796 op/s ⨠ get medium
+           5,008 op/s ⨠ get small
+
+
+  Suites:  8
+  Benches: 48
+  Elapsed: 165,995.13 ms

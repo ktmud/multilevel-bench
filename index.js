@@ -1,20 +1,10 @@
-function generateString(i) {
-  var ret = ''
-  while (i) {
-    i -= 1
-    ret += '{1234567890abcd}'
-  }
-  return ret
-}
+var common = require('./common');
 
-var str = {
-  large : generateString(16),
-  medium : generateString(8),
-  small : generateString(1)
-}
-var iterations = 100000;
+var str = common.str
+var iterations = 30000;
 var __dir = __dirname + '/var';
 var PORT = 18904;
+
 
 suite('Redis (100.000x)', function () {
   set('type', 'static');
@@ -65,9 +55,15 @@ suite('levelUP (100.000x)', function () {
 
   var levelup = require('levelup');
   var rimraf = require('rimraf');
+  var db;
 
-  rimraf.sync(__dir + '/levelup');
-  var db = levelup(__dir + '/levelup');
+  before(function(done) {
+    rimraf.sync(__dir + '/levelup');
+    db = levelup(__dir + '/levelup', done);
+  })
+  after(function(done) {
+    db.close(done);
+  });
 
   var i = 0;
   bench('set small', function (done) { db.put(i++, str.small, done) });
@@ -84,11 +80,15 @@ suite('levelDOWN (100.000x)', function () {
 
   var leveldown = require('leveldown');
   var rimraf = require('rimraf');
+  var db;
 
-  rimraf.sync(__dir + '/leveldown');
-  var db = leveldown(__dir + '/leveldown');
-  db.open(function (err) {
-    if (err) throw err;
+  before(function(done) {
+    rimraf.sync(__dir + '/leveldown');
+    db = leveldown(__dir + '/leveldown');
+    db.open(done);
+  })
+  after(function(done) {
+    db.close(done);
   });
 
   var i = 0;
@@ -243,4 +243,3 @@ suite('Memory (100.000x)', function () {
   bench('get medium', function () { db[--i]+'' });
   bench('get large', function () { db[--i]+'' });
 });
-

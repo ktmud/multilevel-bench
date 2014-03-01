@@ -1,0 +1,85 @@
+
+                      Redis (100.000x)
+          11,880 op/s ⨠ set small
+          10,887 op/s ⨠ set medium
+           9,179 op/s ⨠ set large
+          12,500 op/s ⨠ get large
+          12,003 op/s ⨠ get medium
+          12,632 op/s ⨠ get small
+
+                      SSDB (100.000x)
+           9,173 op/s ⨠ set small
+           8,390 op/s ⨠ set medium
+           7,569 op/s ⨠ set large
+           7,832 op/s ⨠ get large
+           8,788 op/s ⨠ get medium
+           7,997 op/s ⨠ get small
+
+                      levelUP (100.000x)
+          33,278 op/s ⨠ set small
+          30,436 op/s ⨠ set medium
+          16,588 op/s ⨠ set large
+          28,465 op/s ⨠ get large
+          31,106 op/s ⨠ get medium
+          36,436 op/s ⨠ get small
+
+                      levelDOWN (100.000x)
+          34,230 op/s ⨠ set small
+          30,286 op/s ⨠ set medium
+          18,110 op/s ⨠ set large
+          29,298 op/s ⨠ get large
+          31,379 op/s ⨠ get medium
+          31,293 op/s ⨠ get small
+
+                      lmdb (100.000x)
+           4,532 op/s ⨠ set small
+           8,693 op/s ⨠ set medium
+          22,047 op/s ⨠ set large
+          31,627 op/s ⨠ get large
+          32,287 op/s ⨠ get medium
+          37,479 op/s ⨠ get small
+
+                      levelup lmdb (100.000x)
+           4,120 op/s ⨠ set small
+           7,614 op/s ⨠ set medium
+          11,966 op/s ⨠ set large
+          12,599 op/s ⨠ get large
+          15,291 op/s ⨠ get medium
+          35,147 op/s ⨠ get small
+
+                      multilevel (100.000x)
+           5,800 op/s ⨠ set small
+           5,309 op/s ⨠ set medium
+           4,728 op/s ⨠ set large
+           4,925 op/s ⨠ get large
+           5,451 op/s ⨠ get medium
+           5,750 op/s ⨠ get small
+
+                      multilevel (standalone server process, 100.000x)
+           5,168 op/s ⨠ set small
+           4,973 op/s ⨠ set medium
+           4,289 op/s ⨠ set large
+           4,480 op/s ⨠ get large
+           5,092 op/s ⨠ get medium
+           5,214 op/s ⨠ get small
+
+                      MemDOWN (10.000x)
+         131,990 op/s ⨠ set small
+         102,456 op/s ⨠ set medium
+          76,273 op/s ⨠ set large
+         147,704 op/s ⨠ get large
+         165,973 op/s ⨠ get medium
+         169,761 op/s ⨠ get small
+
+                      Memory (100.000x)
+      21,521,128 op/s ⨠ set small
+      26,599,848 op/s ⨠ set medium
+      25,040,378 op/s ⨠ set large
+      55,402,174 op/s ⨠ get small
+      66,948,445 op/s ⨠ get medium
+      58,525,851 op/s ⨠ get large
+
+
+  Suites:  10
+  Benches: 60
+  Elapsed: 162,727.02 ms
