@@ -1,0 +1,38 @@
+
+                      levelUP (random keys, 100.000x)
+          41,731 op/s ⨠ set small
+          31,768 op/s ⨠ set medium
+          11,529 op/s ⨠ set large
+          22,267 op/s ⨠ get large
+          29,931 op/s ⨠ get medium
+          30,583 op/s ⨠ get small
+
+                      levelup lmdb (random keys, 100.000x)
+           4,504 op/s ⨠ set small
+           4,099 op/s ⨠ set medium
+           3,831 op/s ⨠ set large
+          31,278 op/s ⨠ get large
+          39,647 op/s ⨠ get medium
+          47,059 op/s ⨠ get small
+
+                      SSDB (random keys, 100.000x)
+          12,742 op/s ⨠ set small
+          11,079 op/s ⨠ set medium
+           8,812 op/s ⨠ set large
+           4,118 op/s ⨠ get large
+          13,867 op/s ⨠ get medium
+          14,308 op/s ⨠ get small
+
+                      Redis (random keys, 100.000x)
+          16,280 op/s ⨠ set small
+          15,510 op/s ⨠ set medium
+          13,483 op/s ⨠ set large
+           8,576 op/s ⨠ get large
+          14,342 op/s ⨠ get medium
+          16,547 op/s ⨠ get small
+
+
+  Suites:  4
+  Benches: 24
+  Elapsed: 871,971.67 ms
+

@@ -6,49 +6,6 @@ var __dir = __dirname + '/var';
 var PORT = 18904;
 
 
-suite('Redis (100.000x)', function () {
-  set('type', 'static');
-  set('iterations', iterations);
-
-  var redis = require('redis');
-  var client = redis.createClient();
-  before(function(next) {
-    client.flushdb(next);
-  });
-
-  var i = 0;
-  bench('set small', function (done) { client.set(i++, str.small, done) });
-  bench('set medium', function (done) { client.set(i++, str.medium, done) });
-  bench('set large', function (done) { client.set(i++, str.large, done) });
-  bench('get large', function (done) { client.get(--i, done) });
-  bench('get medium', function (done) { client.get(--i, done) });
-  bench('get small', function (done) { client.get(--i, done) });
-});
-
-suite('SSDB (100.000x)', function () {
-  set('type', 'static');
-  set('iterations', iterations);
-
-  var redis = require('redis');
-  var client = redis.createClient(8888);
-
-  before(function(next) {
-    client.keys(function(err, keys){
-      client.multi([
-        [ 'multi_del', keys ]
-      ]).exec(next);
-    });
-  });
-
-  var i = 0;
-  bench('set small', function (done) { client.set(i++, str.small, done) });
-  bench('set medium', function (done) { client.set(i++, str.medium, done) });
-  bench('set large', function (done) { client.set(i++, str.large, done) });
-  bench('get large', function (done) { client.get(--i, done) });
-  bench('get medium', function (done) { client.get(--i, done) });
-  bench('get small', function (done) { client.get(--i, done) });
-});
-
 suite('levelUP (100.000x)', function () {
   set('type', 'static');
   set('iterations', iterations);
@@ -206,6 +163,49 @@ suite('multilevel (standalone server process, 100.000x)', function () {
   bench('get large', function (done) { db.get(--i, done) });
   bench('get medium', function (done) { db.get(--i, done) });
   bench('get small', function (done) { db.get(--i, done) });
+});
+
+suite('SSDB (100.000x)', function () {
+  set('type', 'static');
+  set('iterations', iterations);
+
+  var redis = require('redis');
+  var client = redis.createClient(8888);
+
+  before(function(next) {
+    client.keys(function(err, keys){
+      client.multi([
+        [ 'multi_del', keys ]
+      ]).exec(next);
+    });
+  });
+
+  var i = 0;
+  bench('set small', function (done) { client.set(i++, str.small, done) });
+  bench('set medium', function (done) { client.set(i++, str.medium, done) });
+  bench('set large', function (done) { client.set(i++, str.large, done) });
+  bench('get large', function (done) { client.get(--i, done) });
+  bench('get medium', function (done) { client.get(--i, done) });
+  bench('get small', function (done) { client.get(--i, done) });
+});
+
+suite('Redis (100.000x)', function () {
+  set('type', 'static');
+  set('iterations', iterations);
+
+  var redis = require('redis');
+  var client = redis.createClient();
+  before(function(next) {
+    client.flushdb(next);
+  });
+
+  var i = 0;
+  bench('set small', function (done) { client.set(i++, str.small, done) });
+  bench('set medium', function (done) { client.set(i++, str.medium, done) });
+  bench('set large', function (done) { client.set(i++, str.large, done) });
+  bench('get large', function (done) { client.get(--i, done) });
+  bench('get medium', function (done) { client.get(--i, done) });
+  bench('get small', function (done) { client.get(--i, done) });
 });
 
 suite('MemDOWN (10.000x)', function () {

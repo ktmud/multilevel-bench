@@ -15,12 +15,10 @@
   "dependencies": {
     "matcha": "~0.2.0",
     "redis": "latest",
-    "hiredis": "latest",
     "rimraf": "~2.1.4",
     "levelup": "rvagg/node-levelup",
     "lmdb": "rvagg/lmdb",
     "multilevel": "latest",
-    "multilevel-http": "latest",
     "leveldown": "latest",
     "memdown": "latest",
     "temp": "~0.5.0"
